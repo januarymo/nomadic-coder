@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_221754) do
+ActiveRecord::Schema.define(version: 2020_03_03_175246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tutor_profiles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "address"
+    t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tutor_profiles_on_user_id"
+  end
+
+  create_table "tutorings", force: :cascade do |t|
+    t.bigint "tutee_id"
+    t.bigint "tutor_profile_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tutee_id"], name: "index_tutorings_on_tutee_id"
+    t.index ["tutor_profile_id"], name: "index_tutorings_on_tutor_profile_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +47,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_221754) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tutor_profiles", "users"
+  add_foreign_key "tutorings", "tutor_profiles"
+  add_foreign_key "tutorings", "users", column: "tutee_id"
 end

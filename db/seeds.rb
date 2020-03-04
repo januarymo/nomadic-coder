@@ -1,3 +1,5 @@
+Tutoring.destroy_all
+TutorProfile.destroy_all
 User.destroy_all
 
 tutee_1 = User.create!(email: "tutee1@email.com", password: 123456)
@@ -17,3 +19,5 @@ Tutoring.create!(
   start_at: DateTime.now + 2.days,
   end_at:   DateTime.now + 2.days + 4.hours
 )
+
+

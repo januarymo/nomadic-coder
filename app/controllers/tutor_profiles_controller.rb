@@ -1,5 +1,4 @@
 class TutorProfilesController < ApplicationController
-<<<<<<< HEAD
   def index
     @tutor_profiles = TutorProfile.all
   end  
@@ -7,7 +6,3 @@ class TutorProfilesController < ApplicationController
     @tutor_profile = TutorProfile.find(params[:id])
   end  
 end
-=======
-end
-
->>>>>>> master

@@ -5,16 +5,23 @@
       <div class="col-8">
         <div class="row">
           <div class="col-3">
-            <img src="http://placehold.it/300x300" class="w-100">
+            <img src="<%=  @tutor_profile.user.picture%>" style="width: 130px">
           </div>
           <div class="col-9">
-            <h1><strong><%= @tutor_profile.bio %></strong></h1>
+            <h1><strong><%= @tutor_profile.user.name %></strong></h1>
             <p><%= @tutor_profile.user.email %></p>
           </div>
         </div>
       </div>
       <div class="col-4">
+        <p><%=  @tutor_profile.bio %></p>
       </div>
     </div>
   </div>
 </div>
+
+
+
+<%# <div class="green-wrapper p-5">
+</div> %>
+<%=  %>

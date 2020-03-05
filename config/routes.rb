@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   scope :users do
     resources :chats, only: :show, param: :user_id
     resources :tutor_profiles, only: [:index, :show]
+
   end
+
+  resources :tutor_profiles, only: [] do
+    resources :tutorings, only: [:create]
+  end
+
 end
 

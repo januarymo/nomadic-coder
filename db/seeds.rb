@@ -16,6 +16,20 @@ TutorProfile.create!(
   address: "Fernando Montes de Oca 28 - CDMX - Mexico"
 )
 
+TutorProfile.create!(
+  user: User.create!(email: "tutor3@email.com", password: 123456),
+  bio: "I love MindFuck",
+  address: "333 Benbow dr. East Bend, NC"
+)
+
+
+TutorProfile.create!(
+  user: User.create!(email: "tutor4@email.com", password: 123456),
+  bio: "I love Le Wagon",
+  address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France
+"
+)
+
 puts "Tutees book tutors..."
 Tutoring.create!(
   tutee: tutee_1,

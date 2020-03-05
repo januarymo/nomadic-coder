@@ -7,7 +7,7 @@ tutee_1 = User.create!(email: "tutee1@email.com", password: 123456)
 puts "Creating tutors..."
 TutorProfile.create!(
   user: tutor_1 = User.create!(email: "tutor1@email.com", password: 123456, name: "Andy", picture: "https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"),
-  bio: "My specializations are Ruby, Python, and JS",
+  bio: "My specializations are Ruby, Python, and JS. I'd love to help. Send me a message!",
   address: "Campeche 233 - CDMX - Mexico"
 )
 TutorProfile.create!(
@@ -28,8 +28,7 @@ TutorProfile.create!(
   user: User.create!(email: "tutor4@email.com", password: 123456, name: "Trisha", picture: "https://images.unsplash.com/photo-1581992652564-44c42f5ad3ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"),
   bio: "I am an experienced Software Engineer with around 10 years of real experience in the field.
   Skilled in C/C++, Java, JavaScript",
-  address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France
-"
+  address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France"
 )
 
 puts "Tutees book tutors..."

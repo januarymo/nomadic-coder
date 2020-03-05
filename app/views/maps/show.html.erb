@@ -10,9 +10,14 @@
   <% end %>
 </div>
 <div  id="map"
-  style="width: 100%;
-  height: 600px;"
+  style=""
   data-center="<%= @center %>"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+<div>
+  <% @tutor_profiles.each do |profile|%>
+<%= profile.user.name %>
+<% end %>
+
+</div>

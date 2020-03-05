@@ -29,3 +29,15 @@
   top:150px;
 }
 
+.white-square {
+  background-color: $light-gray;
+  width: 700px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:5px 5px 5px #9999994f;
+  border-radius: 5px;
+}
+

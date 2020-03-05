@@ -9,15 +9,20 @@
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+    <ul>
+      <% @tutor_profiles.each do |profile|%>
+      <li><%= link_to profile.user.name, tutor_profile_path(profile)%></li>
+        
+      <% end %>
+    </ul>
+    </div>
+  </div>
+</div>  
 <div  id="map"
-  style=""
   data-center="<%= @center %>"
   data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-<div>
-  <% @tutor_profiles.each do |profile|%>
-<%= profile.user.name %>
-<% end %>
-
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>

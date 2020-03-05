@@ -8,7 +8,7 @@ class MapsController < ApplicationController
     results = Geocoder.search(params[:location])
     @center = results.first.coordinates
 
-    @tutor_profiles = TutorProfile.near(@center, 50)
+    @tutor_profiles = TutorProfile.near(@center, 200)
     @markers = @tutor_profiles.map do |tutor_profile|
       {
         lat: tutor_profile.latitude,

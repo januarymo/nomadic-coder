@@ -28,9 +28,21 @@ TutorProfile.create!(
   user: User.create!(email: "tutor4@email.com", password: 123456, name: "Trisha", picture: "https://images.unsplash.com/photo-1581992652564-44c42f5ad3ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"),
   bio: "I am an experienced Software Engineer with around 10 years of real experience in the field.
   Skilled in C/C++, Java, JavaScript",
-  address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France
-"
+  address: "Champ de Mars, 75007 Paris, France"
 )
+
+TutorProfile.create!(
+  user: User.create!(email: "tutor5@email.com", password: 123456, name: "Artem", picture: "https://images.unsplash.com/photo-1525496649711-a6c069fc6a1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"),
+  bio: "I am an experienced Java Engineer and I live on the island of Java",
+  address: "Jakarta, Indonesia"
+)
+
+TutorProfile.create!(
+  user: User.create!(email: "tutor6@email.com", password: 123456, name: "Kim Jong Un", picture: "https://media.voltron.voanews.com/Drupal/01live-166/styles/sourced/s3/reuters-pictures/2020/01/RTS2WX67.jpg?itok=uFwoOi2a"),
+  bio: "I believe in the power of Juche and I fight for a United Korea... and I am good at Python",
+  address: "Pyongyang, North Korea"
+)
+
 
 puts "Tutees book tutors..."
 Tutoring.create!(

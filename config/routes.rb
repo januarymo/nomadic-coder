@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   resource :map, only: :show
   # user_chat GET    /user/chats/:user_id    user/chats#show
-  namespace :user do
+  scope :users do
     resources :chats, only: :show, param: :user_id
-    resource :tutor, only: [:create, :new]
+    resources :tutor_profiles, only: [:index, :show]
   end
 end
 

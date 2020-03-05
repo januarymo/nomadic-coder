@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_one :tutor_profile, dependent: :destroy # has_many but with uniqueness validation
 
-  has_many :tutee_tutorings, foreign_key: :tutee_id, class_name: "Tutoring"
+  has_many :tutee_tutorings, foreign_key: :tutee_id, class_name: "Tutoring", dependent: :destroy
   has_many :tutor_tutorings, through: :tutor_profile, source: :tutorings
 
   scope :tutor, -> { joins(:tutor_profile) }

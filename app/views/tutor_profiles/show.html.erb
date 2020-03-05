@@ -17,11 +17,18 @@
         <p><%=  @tutor_profile.bio %></p>
       </div>
     </div>
-  </div>
+
+
+    <div>
+  <h2> Book this tutor for a tutoring session:</h2>
+  <%= simple_form_for [@tutor_profile, @tutoring] do |f| %>
+    <%= f.input :start_at, as: :date, html5: true %>
+    <%= f.input :end_at, as: :date, html5: true %>
+    <%= f.submit "book session", class: "btn btn-primary" %>
+  <% end %>
+
 </div>
 
 
-
-<%# <div class="green-wrapper p-5">
-</div> %>
-<%=  %>
+  </div>
+</div>

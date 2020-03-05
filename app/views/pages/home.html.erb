@@ -3,8 +3,16 @@
   <div class="container">
     <h1><strong>Nomadic Coder</strong></h1>
     <p>Do something great from anywhere in the world.</p>
-    <%= link_to "Find a tutor!", "map", class: "btn btn-flat" %>
-  </div>
+     <%= form_tag map_path, method: :get do %>
+      <%= text_field_tag :location, # field name (params key)
+        params[:location], # value
+          class: "form-control",
+          placeholder: "Location"
+      %>
+      <%= select_tag :languages, options_for_select(%w[Ruby JS Python]), multiple: true %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+ </div>
 </div>
 
 

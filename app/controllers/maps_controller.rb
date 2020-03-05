@@ -13,6 +13,8 @@ class MapsController < ApplicationController
       {
         lat: tutor_profile.latitude,
         lng: tutor_profile.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: {tutor_profile: tutor_profile})
+        #image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end

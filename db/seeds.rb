@@ -44,7 +44,7 @@ TutorProfile.create!(
 )
 
 TutorProfile.create!(
-  user: User.create!(email: "kimsangmin@email.com", password: 123456, name: "Kim Sangmin", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1583523555/kim_tsel9f.jpg"),
+  user: User.create!(email: "kimsangmin@email.com", password: 123456, name: "Kim Sangmin", picture: "https://pbs.twimg.com/profile_images/1133434395837132800/62Rn-6lA_400x400.jpg"),
   bio: "I really like C++ and hope to move back to Busan, South Korea very very soon",
   address: "Mansudae Fountain Park, Pyongyang, North Korea"
 )

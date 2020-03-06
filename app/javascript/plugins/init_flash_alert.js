@@ -4,25 +4,20 @@ import 'sweetalert2/src/sweetalert2.scss'
 const initFlashAlert = () => {
   const flashAlert = document.querySelector(".flash-alert")
 
-  let timerInterval
+
+  if (flashAlert) {
+    const title = flashAlert.querySelector(".flash-alert-content h3").innerText
+    const info = flashAlert.querySelector(".flash-alert-content p").innerText
+    flashAlert.style.display = "none"
+
+    let timerInterval
     Swal.fire({
-      title: 'Successfully Booked!',
-      html: 'Your tutor will contact you to confirm.',
+      title: title,
+      html: info,
       timer: 4000,
       timerProgressBar: true,
       icon: 'success',
-      // onBeforeOpen: () => {
-      //   Swal.showLoading()
-      //   timerInterval = setInterval(() => {
-      //     const content = Swal.getContent()
-      //     if (content) {
-      //       const b = content.querySelector('b')
-      //       if (b) {
-      //         b.textContent = Swal.getTimerLeft()
-      //       }
-      //     }
-      //   }, 100)
-      // },
+
       onClose: () => {
         clearInterval(timerInterval)
       }
@@ -32,11 +27,6 @@ const initFlashAlert = () => {
         console.log('I was closed by the timer')
       }
     })
-
-  if (flashAlert) {
-    const content = flashAlert.querySelector(".flash-alert-content").innerText
-    flashAlert.style.display = "none"
-    Swal.fire(content)
   }
 }
 

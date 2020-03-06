@@ -15,6 +15,9 @@
 <% if flash[:notice_alert] %>
   <div class="alert alert-info alert-dismissible flash-alert" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <span class="flash-alert-content"><%= flash[:notice_alert] %></span>
+    <span class="flash-alert-content">
+      <h3><%= flash[:notice_alert][0] %></h3>
+      <p><%= flash[:notice_alert][1] %></p>
+    </span>
   </div>
 <% end %>

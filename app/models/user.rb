@@ -16,4 +16,8 @@ class User < ApplicationRecord
   #   left_joins(:tutor_profile).where(tutor_profiles: { user_id: nil })
   # end
   # scope :tutee, -> { left_joins(:tutor_profile).where("tutor_profiles.user_id IS NULL") }
+
+  def tutor?
+    tutor_profile.present?
+  end
 end

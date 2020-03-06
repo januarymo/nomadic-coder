@@ -1,28 +1,54 @@
-<div>
-  <%= form_tag map_path, method: :get do %>
-    <%= text_field_tag :location, # field name (params key)
-      params[:location], # value
-        class: "form-control",
-        placeholder: "Location"
-    %>
-    <%= select_tag :languages, options_for_select(%w[Ruby JS Python]), multiple: true %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-</div>
-<div class="container">
+    <%= form_tag map_path, method: :get do %>
+      <div class="form-group">
+        <div class="col">
+          <%= text_field_tag :location, # field name (params key)
+            params[:location], # value
+              class: "form-control",
+              placeholder: "Location"
+          %>
+        </div>
+        <div class="col">
+          <%= select_tag :languages, options_for_select(%w[Ruby JS Python]), multiple: true, class: "w-15" %>
+        </div>
+        <div class="col">
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+         </div>
+      </div>
+    <% end %>
+
+<h1>All Tutors based on your search criteria</h1>
+
+<div class="container-fluid">
   <div class="row">
-    <div class="col-6">
-    <ul>
-      <% @tutor_profiles.each do |profile|%>
-      <li><%= link_to profile.user.name, tutor_profile_path(profile)%></li>
-        
-      <% end %>
-    </ul>
+    <div class="col-8">
+      <div class="cards">
+        <% @tutor_profiles.each do |profile| %>
+          <div class="profile-card">
+            <div class="profile-card-image" style="background-image: url('<%= profile.user.picture %>')"></div>
+            <div class="profile-card-content">
+              <div class="profile-card-title">
+                <h4><%= profile.user.name %></h4>
+              </div>
+              <p><%= profile.bio %></p>
+            </div>
+            <div class="profile-card-actions">
+              <%= link_to 'View my profile & Book me', tutor_profile_path(profile) %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div  id="map"
+        data-center="<%= @center %>"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
-</div>  
-<div  id="map"
-  data-center="<%= @center %>"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
+
+
+
+

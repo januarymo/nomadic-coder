@@ -12,7 +12,9 @@ class TutoringsController < ApplicationController
     @tutoring.tutee = current_user
 
     if @tutoring.save
+
       flash[:notice_alert] = ["Successfully Booked!", "Your tutor will contact you to confirm."]
+
       redirect_to root_path
     else
       render "tutor_profiles/show"

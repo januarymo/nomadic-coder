@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,6 +8,11 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css">
+    <link rel="stylesheet" href="./assets/css/lazy.css">
+
   </head>
   <body>
     <%= render 'components/navbar' %>
@@ -17,5 +22,16 @@
     <%= javascript_include_tag 'application' %>
 
     <%= javascript_pack_tag 'application' %>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/popper/popper.min.js"></script>
+    <script src="./assets/vendor/bootstrap/bootstrap.min.js" ></script>
+
+    <!-- optional plugins -->
+    <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+
+    <!--   lazy javascript -->
+    <script src="./assets/js/lazy.js"></script>
   </body>
 </html>

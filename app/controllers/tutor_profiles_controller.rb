@@ -1,8 +1,9 @@
 class TutorProfilesController < ApplicationController
   def index
     @tutor_profiles = TutorProfile.all
-  end  
+  end
   def show
     @tutor_profile = TutorProfile.find(params[:id])
-  end  
+    @tutoring = Tutoring.new
+  end
 end

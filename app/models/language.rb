@@ -1,2 +1,2 @@
 class Language < ApplicationRecord
- end
+end

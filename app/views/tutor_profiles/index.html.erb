@@ -1,5 +1,9 @@
 <% @tutor_profiles.each do |profile|%>
-<%= profile.bio %>
+<ul>
+<li> <%= link_to profile.user.name, tutor_profile_path(profile)%></li>
+<p><%=  profile.address%></p>
+</ul>
 <% end %>
+
 
 

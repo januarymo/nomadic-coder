@@ -74,7 +74,7 @@ TutorProfile.create!(
 )
 
 TutorProfile.create!(
-  user: User.create!(email: "chef@email.com", password: 123456, name: "Chef Lee", picture: "https://lh5.googleusercontent.com/hnIqWkBFJbDZN_ZUQ-aXj29Dd6DuCcSfn013StDZH89uGuIr-nA4hnDhDm4BeNxH2gs26Zgn6f5lvVpB6yi7dp4nE3us6ZBvq1Zx_7SOKk04WXYVA34YfEURFJi1OoGx2nLbNd8j"),
+  user: User.create!(email: "chef@email.com", password: 123456, name: "Chef Lee", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1583528272/chef_lee_oeoyg1.jpg"),
   bio: "I think I am on the wrong app, I teach baking and home economics",
   address: "Okryu Restaurant, Pyongyang, North Korea"
 )

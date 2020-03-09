@@ -31,7 +31,7 @@ TutorProfile.create!(
 )
 
 TutorProfile.create!(
-  languages: [ruby],
+  languages: [ruby, mysql],
   user: User.create!(email: "andrea@email.com", password: 123456, name: "Andrea", picture: "https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"),
   bio: "I'm experienced in MindFuck. Hit me up if you need any help with your projects!",
   address: "333 Benbow dr. East Bend, NC"
@@ -54,9 +54,9 @@ TutorProfile.create!(
 )
 
 TutorProfile.create!(
-  languages: [python],
+  languages: [python, ruby],
   user: User.create!(email: "kimchi@email.com", password: 123456, name: "Kim Jong Un", picture: "https://media.voltron.voanews.com/Drupal/01live-166/styles/sourced/s3/reuters-pictures/2020/01/RTS2WX67.jpg?itok=uFwoOi2a"),
-  bio: "I believe in the power of Juche and I fight for a United Korea... and I am good at Python",
+  bio: "I believe in the power of Juche and I fight for a United Korea... and I am good at Python and Ruby!",
   address: "Pyongyang, North Korea"
 )
 
@@ -68,7 +68,7 @@ TutorProfile.create!(
 )
 
 TutorProfile.create!(
-  languages: [javascript],
+  languages: [javascript, mysql],
   user: User.create!(email: "jimmy@email.com", password: 123456, name: "Jimmy Park", picture: "https://pm1.narvii.com/5901/8ae14e3f33a01986b20dfce83e46240252034569_hq.jpg"),
   bio: "I will help you with JavaScript if you help me with getting the fuck out of here",
   address: "Grand People's Study House, Pyongyang, North Korea"
@@ -77,14 +77,14 @@ TutorProfile.create!(
 TutorProfile.create!(
   languages: [ruby],
   user: User.create!(email: "revolutionary6@email.com", password: 123456, name: "Jeong Jeong", picture: "https://upload.wikimedia.org/wikipedia/commons/3/38/North_Korean_Soldier.jpg"),
-  bio: "I'm a Ruby wiz- Americans need not apply",
+  bio: "I'm a Ruby wiz- I will make sure you do your work",
   address: "Taedongmun Park, Pyongyang, North Korea"
 )
 
 TutorProfile.create!(
-  languages: [python],
+  languages: [python, ruby],
   user: User.create!(email: "coco@email.com", password: 123456, name: "Coco Hwang", picture: "https://static.boredpanda.com/blog/wp-content/uploads/2015/10/125__880.jpg"),
-  bio: "I can teach you anything you'd like about Python, but only if you don't tell Kim Jong Un",
+  bio: "I can teach you anything you'd like about Python and Ruby, but only if you don't tell Kim Jong Un",
   address: "Mansudae Peoples Theatre, Pyongyang, North Korea"
 )
 
@@ -96,7 +96,7 @@ TutorProfile.create!(
 )
 
 TutorProfile.create!(
-  languages: [],
+  languages: [ruby],
   user: User.create!(email: "chef@email.com", password: 123456, name: "Chef Lee", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1583528272/chef_lee_oeoyg1.jpg"),
   bio: "I think I am on the wrong app, I teach baking and home economics",
   address: "Okryu Restaurant, Pyongyang, North Korea"

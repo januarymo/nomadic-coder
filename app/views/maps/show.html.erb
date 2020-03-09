@@ -1,12 +1,5 @@
 <div>
-  <%= form_tag map_path, method: :get do %>
-    <%= text_field_tag :location, # field name (params key)
-      params[:location], # value
-      class: "form-control",
-      placeholder: "Location"%>
-    <%= select_tag :languages, options_for_select(%w[Ruby JS Python]), multiple: true %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+  <%= render "components/language_search" %>
 </div>
 <h1>All Tutors based on your search criteria</h1>
 
@@ -32,7 +25,6 @@
     </div>
     <div class="col-4">
       <div  id="map"
-        data-center="<%= @center %>"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>

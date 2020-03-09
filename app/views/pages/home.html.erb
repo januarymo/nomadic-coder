@@ -3,16 +3,7 @@
   <div class="container">
     <h1><strong>Nomadic Coder</strong></h1>
     <p>Do something great from anywhere in the world.</p>
-     <%= form_tag map_path, method: :get do %>
-      <%= text_field_tag :location, # field name (params key)
-        params[:location], # value
-          class: "form-control",
-          placeholder: "Location"
-      %>
-      <%= select_tag :languages, options_for_select(%w[Ruby JS Python]), multiple: true %>
-      <%= submit_tag "Find a Tutor!", class: "btn btn-success" %>
-    <% end %>
+    <%= render "components/language_search" %>
  </div>
 </div>
-
 

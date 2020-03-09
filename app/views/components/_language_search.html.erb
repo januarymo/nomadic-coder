@@ -7,6 +7,7 @@
   <%= select_tag :languages,
                  options_for_select(%w[Java Ruby Python C++ JavaScript Go C# CSS  mySQL PHP C React]),
                  class: "js-language-search",
+                 # input_html: { value: "Ruby"},
                  multiple: true %>
-  <%= submit_tag "Find a Tutor!", class: "btn btn-success" %>
+  <%= submit_tag "Find a Tutor!", class: "btn btn-success", id: "home_button" %>
 <% end %>

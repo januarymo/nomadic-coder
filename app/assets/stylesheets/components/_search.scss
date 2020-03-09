@@ -1,10 +1,10 @@
 .search-dropdown-wrapper {
-  width: 600px;
+  width: 800px;
   margin: 0 auto;
   position: relative;
 
   .search-input {
-    width: 80%;
+    width: 50%;
   }
 
   /* unvisited link */
@@ -75,3 +75,14 @@ p {
   font-size: 0.8rem;
   // margin-bottom: 2rem;
 }
+
+.form-control {
+  margin-bottom: 15px;
+  width: 40%;
+}
+
+#home_button {
+  margin-left: 15px;
+}
+
+

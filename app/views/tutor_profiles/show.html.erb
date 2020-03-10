@@ -60,13 +60,17 @@
       <a href="#a" class="btn btn-info btn-pill">Find Friends</a>
     </div>
     <div>
-      <h2> Book this tutor for a tutoring session:</h2>
+       <h2> Make it official!</h2>
+      <h1>Schedule a time and place to meet: </h1>
       <%= simple_form_for [@tutor_profile, @tutoring] do |f| %>
-        <%= f.input :start_at, as: :date, html5: true %>
-        <%= f.input :end_at, as: :date, html5: true %>
+        <%= f.input :start_at, :as => :datetime, html5: true%>
+         <%= f.input :end_at, :as => :datetime, html5: true%>
         <%= f.submit "book session", class: "btn btn-primary" %>
       <% end %>
      </div>
   </div>
 
 </div>
+
+<div>
+

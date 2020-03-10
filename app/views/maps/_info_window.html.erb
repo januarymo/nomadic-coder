@@ -1,2 +1,11 @@
-<h2><%= tutor_profile.user_id %></h2>
-<p><%= tutor_profile.address %></p>
+<div class="profile-card">
+  <div class="profile-card-image" style="background-image: url('<%= tutor_profile.user.picture %>')"></div>
+  <div class="profile-card-content">
+    <div class="profile-card-title">
+      <h4><%= tutor_profile.user.name %></h4>
+    </div>
+    <p><%= tutor_profile.bio %></p>
+  </div>
+  <div class="profile-card-actions">
+    <%= link_to 'View my profile & Book me', tutor_profile_path(tutor_profile) %>
+  </div>

@@ -1,13 +1,10 @@
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  background-color: transparent;
-  padding-top: 2rem;
-  text-shadow: white 0px 0px 10px;
+// Body class for sticky footer
+.main-content {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
 .footer-links {
   display: flex;
   align-items: center;

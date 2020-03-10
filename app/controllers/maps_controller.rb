@@ -16,6 +16,7 @@ class MapsController < ApplicationController
 
     @markers = @tutor_profiles.map do |tutor_profile|
       {
+        id: tutor_profile.id,
         lat: tutor_profile.latitude,
         lng: tutor_profile.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: {tutor_profile: tutor_profile})

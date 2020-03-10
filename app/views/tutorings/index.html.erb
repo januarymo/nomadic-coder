@@ -1,0 +1,11 @@
+<% @tutorings.each do |tutoring|%>
+<ul>
+  <li> Tutee: <%= tutoring.tutee.email %> </li>
+  <li> Tutor: <%= tutoring.tutor_profile.user.name %> </li>
+  <li> Start: <%= tutoring.start_at %> </li>
+  <li> End: <%= tutoring.end_at %> </li>
+</ul>
+<% end %>
+
+
+

@@ -1,3 +1,5 @@
+
+
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
@@ -13,6 +15,10 @@ Rails.application.routes.draw do
 
   resources :tutor_profiles, only: [] do
     resources :tutorings, only: [:create]
+  end
+
+  resources :conversations do
+    resources :messages
   end
 
 end

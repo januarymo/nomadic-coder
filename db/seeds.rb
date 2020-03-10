@@ -1,3 +1,5 @@
+TutorLanguage.destroy_all
+Language.destroy_all
 Tutoring.destroy_all
 TutorProfile.destroy_all
 User.destroy_all

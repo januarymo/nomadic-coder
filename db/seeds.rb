@@ -3,6 +3,8 @@ TutorProfile.destroy_all
 User.destroy_all
 
 tutee_1 = User.create!(email: "tutee1@email.com", password: 123456)
+user1 = User.create!(email: "user1@email.com", password: 123456)
+user2 = User.create!(email: "user2@email.com", password: 123456)
 
 puts "Creating tutors..."
 TutorProfile.create!(

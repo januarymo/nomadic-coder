@@ -1,13 +1,18 @@
 source 'https://rubygems.org'
 ruby '2.6.5'
 
+gem 'jquery-rails'
+gem 'rails-ujs'
 
 gem 'geocoder'
 
 gem 'cloudinary', '~> 1.12.0'
 gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'devise'
 
+gem 'bootstrap-sass', '~> 3.4'
+gem 'bootstrap', '~> 4.4.1'
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'

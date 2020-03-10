@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :users
 
   resource :map, only: :show
   # user_chat GET    /user/chats/:user_id    user/chats#show
@@ -13,6 +14,15 @@ Rails.application.routes.draw do
 
   resources :tutor_profiles, only: [] do
     resources :tutorings, only: [:create]
+  end
+
+
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+
+    resources :messages, only: [:create]
   end
 
 end

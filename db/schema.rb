@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_03_10_003100) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +37,21 @@ ActiveRecord::Schema.define(version: 2020_03_10_003100) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tutor_languages", force: :cascade do |t|
+    t.bigint "tutor_profile_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_tutor_languages_on_language_id"
+    t.index ["tutor_profile_id"], name: "index_tutor_languages_on_tutor_profile_id"
 
   create_table "conversations", force: :cascade do |t|
     t.integer "recipient_id"
@@ -92,6 +109,8 @@ ActiveRecord::Schema.define(version: 2020_03_10_003100) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "tutor_languages", "languages"
+  add_foreign_key "tutor_languages", "tutor_profiles"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "tutor_profiles", "users"

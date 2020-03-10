@@ -1,0 +1,13 @@
+<%= form_tag map_path, method: :get do %>
+  <%= text_field_tag :location, # field name (params key)
+    params[:location], # value
+      class: "form-control",
+      placeholder: "Find a tutor in your town or city!"
+  %>
+  <%= select_tag :languages,
+                 options_for_select(%w[Java Ruby Python C++ JavaScript Go C# CSS  mySQL PHP C React]),
+                 class: "js-language-search",
+                 # input_html: { value: "Ruby"},
+                 multiple: true %>
+  <%= submit_tag "Find a Tutor!", class: "btn btn-success", id: "home_button" %>
+<% end %>

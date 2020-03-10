@@ -6,9 +6,14 @@ class MapsController < ApplicationController
     end
 
     results = Geocoder.search(params[:location])
-    @center = results.first.coordinates
 
-    @tutor_profiles = TutorProfile.near(@center, 200)
+    params[:languages] = Language.pluck(:name) if params[:languages].blank?
+    @tutor_profiles = TutorProfile
+      .joins(:languages)
+      .near(results.first.coordinates, 200)
+      .where("languages.name IN (?)", params[:languages])
+      .distinct
+
     @markers = @tutor_profiles.map do |tutor_profile|
       {
         lat: tutor_profile.latitude,

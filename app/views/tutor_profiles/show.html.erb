@@ -20,6 +20,18 @@
       </div>
     </div>
   </div>
+
+<!-- Messages -->
+  <% if user_signed_in? && current_user.id != @tutor_profile.user_id %>
+      <%= link_to "Message #{@tutor_profile.user.name}", conversations_path(sender_id: current_user.id, recipient_id: @tutor_profile.user.id), method: 'post', class:"button is-link" %>
+    <% elsif user_signed_in? && current_user.id == @tutor_profile.user_id  %>
+      <%= link_to "Conversations", conversations_path %>
+    <% else %>
+
+    <%= link_to "Sign up to message #{@tutor_profile.user.name}", new_user_registration_path %>
+    <% end %>
+    <!--  -->
+
   <div class="navigation d-flex justify-content-center">
     <ul class="nav nav-primary nav-tabs mt-3 d-flex flex-column flex-md-row">
       <li class="nav-item">

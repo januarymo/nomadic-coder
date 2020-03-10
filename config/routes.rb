@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     resources :tutorings, only: [:create]
   end
 
+  resources :chat_rooms, only: [ :show ] do
+    resources :messages, only: [ :create ]
+  end
+
 end
 

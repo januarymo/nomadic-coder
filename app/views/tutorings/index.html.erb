@@ -1,11 +1,32 @@
-<% @tutorings.each do |tutoring|%>
-<ul>
-  <li> Tutee: <%= tutoring.tutee.email %> </li>
-  <li> Tutor: <%= tutoring.tutor_profile.user.name %> </li>
-  <li> Start: <%= tutoring.start_at %> </li>
-  <li> End: <%= tutoring.end_at %> </li>
-</ul>
-<% end %>
-
-
-
+<div class="container">
+  <% @tutorings.each do |tutoring|%>
+    <div class="row row-striped tutoring-card">
+      <div class="col-2 text-center">
+        <h1 class="display-4">
+          <span class="badge badge-secondary">
+            <p><%= tutoring.start_at.strftime('%e') if tutoring.start_at %> </p>
+          </span>
+          <p><%= tutoring.start_at.strftime('%^b') if tutoring.start_at %> </p>
+        </h1>
+      </div>
+      <div class="col-10">
+        <h3 class="text-uppercase"><strong><%= tutoring.tutor_profile.user.name %></strong></h3>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <i class="far fa-calendar-check"></i>
+             <%= tutoring.end_at.strftime('%A') if tutoring.end_at %>
+          </li>
+          <li class="list-inline-item">
+            <i class="far fa-clock" aria-hidden="true"></i>
+            <%= tutoring.start_at.strftime('%I:%M%p') if tutoring.start_at %>
+            -
+            <%= tutoring.end_at.strftime('%I:%M%p') if tutoring.end_at %>
+          </li>
+          <!-- <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i></li> -->
+        </ul>
+        <p>Your meeting is confirmed!</p>
+        <p></p>
+      </div>
+    </div>
+  <% end %>
+</div>

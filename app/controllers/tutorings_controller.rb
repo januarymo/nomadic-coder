@@ -1,5 +1,8 @@
 class TutoringsController < ApplicationController
 
+  def index
+    @tutorings = Tutoring.where(tutee: current_user)
+  end
 
   def create
     @tutoring = Tutoring.new(tutoring_params)
@@ -15,7 +18,7 @@ class TutoringsController < ApplicationController
 
       flash[:notice_alert] = ["Successfully Booked!", "Your tutor will contact you to confirm."]
 
-      redirect_to root_path
+      redirect_to tutorings_path
     else
       render "tutor_profiles/show"
     end

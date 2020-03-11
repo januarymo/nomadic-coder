@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_03_10_213649) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "full_bio"
     t.index ["user_id"], name: "index_tutor_profiles_on_user_id"
   end
 

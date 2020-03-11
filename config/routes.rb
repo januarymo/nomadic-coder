@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   scope :users do
     resources :chats, only: :show, param: :user_id
     resources :tutor_profiles, only: [:index, :show]
+    resources :tutorings, only: [:index]
 
   end
 

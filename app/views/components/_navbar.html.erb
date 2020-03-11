@@ -5,18 +5,18 @@
   <% end %>
 
 
-  <!-- Right navigation if signed in -->
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to root_path, class: "nav-link" do %><i class="fas fa-envelope-open"></i> Messages<% end %>
-        </li>
+<!-- Right navigation if signed in -->
+   <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to conversations_path, class: "nav-link" do %><i class="fas fa-envelope-open"></i> Messages<% end %>
+          </li>
         <li class="nav-item active">
           <%= link_to root_path, class: "nav-link" do %><i class="far fa-calendar"></i> Calendar<% end %>
         </li>
         <li class="nav-item">
-          <%= link_to root_path, class: "nav-link" do %><i class="far fa-bookmark"></i> Sessions<% end %>
+          <%= link_to tutorings_path, class: "nav-link" do %><i class="far fa-bookmark"></i> Sessions<% end %>
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag "https://res.cloudinary.com/do7gz03iy/image/upload/v1583278624/kathrynkellogzerowaste_bwpfc5.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

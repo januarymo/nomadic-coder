@@ -11,17 +11,31 @@
           </div>
           <a href="#a" class="btn btn-primary btn-pill btn-sm ml-3 mt-1">Follow</a>
         </div>
-        <div class="stats d-flex flex-row align-items-center align-items-lg-start text-center text-lg-left">
 
-          <div class="posts"><p class="lead"><b>100</b> lifetime tutees </p></div>
-          <div class="posts"><p class="lead"><b>7</b> lifetime tutors </p></div>
-        </div>
-        <p><%=  @tutor_profile.full_bio %></p>
+        <!-- Skills & Endorsements -->
+
+          <%= @tutor_profile.user.name %>'s <strong>Skills & Endorsements</strong>
+          <div>
+            <% @tutor_profile.tutor_languages.each do |tutor_language| %>
+            <h2>
+             <%= tutor_language.language.name %>
+             <%= link_to endorse_tutor_language_path(tutor_language), class:"endorse", method: :put, remote: true do %>
+              <button type="button" class="btn btn-info" aria-label="Left Align">
+               <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
+                <span class="badge" id="tl-<%= tutor_language.id %>"><%= tutor_language.get_likes.size %></span>
+              </button>
+            </h2>
+              <% end %>
+            <% end %>
+          </div>
+          <!-- Bio -->
+        <p><%=  @tutor_profile.bio %></p>
+
       </div>
     </div>
   </div>
 
-<!-- Messages -->
+<!-- Message -->
   <% if user_signed_in? && current_user.id != @tutor_profile.user_id %>
       <%= link_to "Message #{@tutor_profile.user.name}", conversations_path(sender_id: current_user.id, recipient_id: @tutor_profile.user.id), method: 'post', class:"button is-link" %>
     <% elsif user_signed_in? && current_user.id == @tutor_profile.user_id  %>

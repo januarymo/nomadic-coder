@@ -21,5 +21,11 @@ Rails.application.routes.draw do
     resources :messages
   end
 
+  resources :tutor_languages do
+    member do
+      put "endorse" => "tutor_languages#endorse"
+    end
+  end
+
 end
 

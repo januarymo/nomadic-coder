@@ -15,6 +15,7 @@ gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
 
+gem 'acts_as_votable', '0.10.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'sassc-rails'

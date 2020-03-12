@@ -1,30 +1,39 @@
-<h1 class="title is-4">Message <%= @conversation.recipient.name %></h1>
+<div class="container">
+  <h1 class="title is-3">Message <%= @conversation.recipient.name %></h1>
 
-<% if @over_ten %>
-  <%= link_to "Show previous", '?m=all', class:'button is-link' %>
-<% end %>
-
-<section id="messages" class="mb4">
-  <% @messages.each do |message| %>
-    <% if message.body %>
-      <% user = User.find(message.user_id) %>
-      <article class="message is-dark">
-        <div class="message-body">
-          <div class="inline-block nudge-down-10 pr2"></div>
-          <div class="inline-block"><strong><%= user.name %></strong> <%= message.message_time %></div>
-          <div class="block pt4">
-            <div class="f4"><%= sanitize markdown_to_html(message.body) %></div>
-          </div>
-        </div>
-      </article>
-    <% end %>
+  <% if @over_ten %>
+    <%= link_to "Show previous", '?m=all', class:'button is-link' %>
   <% end %>
-</section>
 
-<%= form_for [@conversation, @message] do |f| %>
-  <%= f.text_area :body, class: "textarea", placeholder: "Tell them about your project..." %>
-  <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-  <div class="text-align-right">
-    <%= f.submit "Send message", class: "button is-link is-large mt3" %>
-  </div>
-<% end %>
+  <section id="messages" class="mb4 bg-white border px-3 py-2 mb-2">
+    <% @messages.each do |message| %>
+      <% next unless message.body %>
+
+      <% if message.user == current_user %>
+        <div class="chat">
+         <%= image_tag message.user.picture, class: "avatar-large right" %>
+          <div class="inline-block right"><strong>Me</strong></div><br>
+          <span class="time-left"><%= time_ago_in_words(message.created_at) %> ago</span>
+          <div class="f4 text-right"><%= sanitize markdown_to_html(message.body) %></div>
+        </div>
+      <% else %>
+        <div class="chat">
+          <%= image_tag message.user.picture, class: "avatar-large" %>
+          <div class="inline-block"><strong><%= message.user.name %></strong></div>
+          <span class="time-right"><%= time_ago_in_words(message.created_at) %> ago</span>
+            <div class="f4"><%= sanitize markdown_to_html(message.body) %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+
+  <%= form_for [@conversation, @message] do |f| %>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+    <div class="d-flex">
+      <div class="form-group m-0 flex-grow-1">
+        <%= f.text_field :body, class: "form-control m-0", placeholder: "Tell them about your project..." %>
+      </div>
+      <%= f.submit "Send message", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

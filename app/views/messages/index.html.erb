@@ -11,9 +11,9 @@
 
       <% if message.user == current_user %>
         <div class="chat">
-         <%= image_tag message.user.picture, class: "avatar-large" %>
-          <div class="inline-block"><strong>Me</strong></div>
-          <span class=""><%= time_ago_in_words(message.created_at) %> ago</span>
+         <%= image_tag message.user.picture, class: "avatar-large right" %>
+          <div class="inline-block right"><strong>Me</strong></div><br>
+          <span class="time-left"><%= time_ago_in_words(message.created_at) %> ago</span>
           <div class="f4 text-right"><%= sanitize markdown_to_html(message.body) %></div>
         </div>
       <% else %>

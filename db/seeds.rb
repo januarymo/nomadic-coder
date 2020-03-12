@@ -91,7 +91,7 @@ TutorProfile.create!(
 TutorProfile.create!(
   languages: [ruby],
   user: User.create!(email: "revolutionary6@email.com", password: 123456, name: "Jeong Jeong", picture: "https://upload.wikimedia.org/wikipedia/commons/3/38/North_Korean_Soldier.jpg"),
-  bio: "I'm a Ruby wiz- I will make sure you do your work",
+  bio: "I'm a Ruby wiz- I will make sure you do your work. Ruby is a really cool language.",
   full_bio: "I am a Software Developer with experience in solving problems and developing products for use cases related to data. I have been coding since my high school which has been more than 12 years now. I possess in depth knowledge of programming in Ruby, Scala, Python, SQL and scripting with Bash. From a technical standpoint I have worked with databases and datawarehouses (nearly all popular ones for some use case or the other), the complete Hadoop Stack along with Apache Spark on public and private cloud. I have created data driven products and platforms, integrating various data sources, managing the data in a secure way and using them to build and run Machine Learning models. I have also worked in advanced software development requiring use of specilized alogorithms, advanced optimizations for data processing needs in SQL, Spark and scaling APIs.",
   address: "Taedongmun Park, Pyongyang, North Korea"
 )

@@ -1,13 +1,18 @@
-<%= form_tag map_path, method: :get do %>
-  <%= text_field_tag :location, # field name (params key)
-    params[:location], # value
-      class: "form-control",
-      placeholder: "Find a tutor in your town or city!"
-  %>
-  <%= select_tag :languages,
-                 options_for_select(%w[Java Ruby Python C++ JavaScript Go C# CSS  mySQL PHP C React]),
-                 class: "js-language-search",
-                 # input_html: { value: "Ruby"},
-                 multiple: true %>
+<%= form_tag map_path, method: :get, class: 'search-form' do %>
+  <div class="search-form-fields">
+    <div class="d-flex">
+      <%= text_field_tag :location, # field name (params key)
+        params[:location], # value
+          class: "search-form-location mb-0 mr-2",
+          placeholder: "Location"
+      %>
+      <%= select_tag :languages,
+                     options_for_select(%w[Java Ruby Python C++ JavaScript Go C# CSS  mySQL PHP C React]),
+                     class: "js-language-search",
+                     # input_html: { value: "Ruby"},
+                     multiple: true %>
+
+    </div>
+  </div>
   <%= submit_tag "Find a Tutor!", class: "btn btn-success", id: "home_button" %>
 <% end %>

@@ -80,8 +80,36 @@
   }
 }
 
-#home_button {
-  margin-left: 15px;
+// .form-control {
+//   margin-bottom: 15px;
+//   width: 40%;
+//   position: relative;
+// }
+.search-form {
+  width: 100%;
+  display: flex;
+  > * {
+    margin-right: 10px;
+  }
+}
+.search-form-fields {
+  display: flex;
+  flex-basis: 40%;
+  flex-direction: column;
+  * {
+    flex-basis: 100%;
+  }
+}
+
+
+.search-form-location {
+  margin-bottom: 12px;
+  min-height: 32px;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #EEE;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
 

@@ -1,8 +1,9 @@
 .navbar-project {
   justify-content: space-between;
   background: transparent;
-  text-shadow: white 0px 0px 10px;
+  text-shadow: white 0px 0px 1px;
 }
+
 
 .navbar-project .navbar-collapse {
   flex-grow: 0;
@@ -10,4 +11,5 @@
 
 .navbar-project .navbar-brand img {
   width: 40px;
+
 }

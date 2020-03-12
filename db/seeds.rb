@@ -2,6 +2,8 @@ TutorLanguage.destroy_all
 Language.destroy_all
 Tutoring.destroy_all
 TutorProfile.destroy_all
+#destroy messages
+#destroy conversations
 User.destroy_all
 
 python = Language.create!(name: "Python")
@@ -15,7 +17,7 @@ php = Language.create!(name: "PHP")
 mysql = Language.create!(name: "MySQL")
 
 
-tutee_1 = User.create!(email: "tutee1@email.com", password: 123456)
+tutee_1 = User.create!(email: "tutee1@email.com", password: 123456, name: "Brandon", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1582828167/m27aQeefTDfF2oztnVWSSEMa.jpg")
 
 puts "Creating tutors..."
 TutorProfile.create!(

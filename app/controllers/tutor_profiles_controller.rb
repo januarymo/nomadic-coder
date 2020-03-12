@@ -7,4 +7,9 @@ class TutorProfilesController < ApplicationController
     @tutor_profile = TutorProfile.find(params[:id])
     @tutoring = Tutoring.new
   end
+
+
+  def experience_params
+  params.require(:experience).permit(:photo)
+  end
 end

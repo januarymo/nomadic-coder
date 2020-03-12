@@ -1,0 +1,52 @@
+<!-- Body navigation -->
+<div class="navigation d-flex justify-content-center">
+  <ul class="nav nav-primary nav-tabs mt-3 d-flex flex-column flex-md-row">
+
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#fullbio">
+        <i class="far fa-bookmark"></i> Bio
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#experience">
+        <i class="fas fa-th"></i> Experience
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#projects">
+        <i class="far fa-bookmark"></i> Projects
+      </a>
+
+  </ul>
+</div>
+
+<div class="profile-tabs tab-content">
+  <div class="tab-pane fade show active text-center" id="fullbio">
+    <div><%=  @tutor_profile.full_bio %></div>
+  </div>
+
+  <div class="tab-pane fade text-center" id="experience">
+    <div><%= cl_image_tag @tutor_profile.user.experience.key, height: 900, width: 700 %></div>
+  </div>
+
+  <div class="tab-pane fade text-center" id="projects">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://cdn.dribbble.com/users/1407879/screenshots/10717381/media/83904f506befa73ab56496976bf858ea.png" class="d-block w-100">
+        </div>
+        <div class="carousel-item square">
+          <img src="https://res.cloudinary.com/do7gz03iy/image/upload/v1584036889/sample-project1_oonvqx.png">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>

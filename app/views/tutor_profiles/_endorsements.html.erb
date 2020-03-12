@@ -1,0 +1,8 @@
+<div>
+  <h4>Endorsements</h4>
+  <% @tutor_profile.tutor_languages.each do |tutor_language| %>
+    <%= link_to endorse_tutor_language_path(tutor_language), class: "btn btn-info btn-sm", method: :put, remote: true do %>
+      <%= icon "fa", "chevron-up" %> <%= tutor_language.language.name %> <span class="badge badge-light"><%= tutor_language.get_likes.size %></span>
+    <% end %>
+  <% end %>
+</div>

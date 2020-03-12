@@ -1,3 +1,5 @@
+require "open-uri"
+
 TutorLanguage.destroy_all
 Language.destroy_all
 Tutoring.destroy_all
@@ -20,12 +22,25 @@ mysql = Language.create!(name: "MySQL")
 tutee_1 = User.create!(email: "tutee1@email.com", password: 123456, name: "Brandon", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1582828167/m27aQeefTDfF2oztnVWSSEMa.jpg")
 
 puts "Creating tutors..."
-TutorProfile.create!(
+tp_1 = TutorProfile.create!(
+  languages: [cplusplus],
+  user: User.create!(email: "therussian@email.com", password: 123456, name: "Ivan Smirnov", picture: "https://i.imgur.com/PE2jmWu.jpg"),
+  bio: "I accidentally entered North Korea when driving from Vladivostok, so now they force me to teach C++",
+  full_bio: "I started teaching myself programming in 2008 at the age of 13, starting with Lua, but have since learnt and worked with C, C#, Java and Python. I primarily make my projects in C# and have participated in 3 Game Jams using XNA. I love creating things especially from scratch which is probably why I love coding, (it is perhaps my biggest hobby) but I also really enjoy helping and teaching people. I've been helping people learn programming whilst at Sixth Form and University and I'd like to think I've gotten pretty good at it, so I look forward to hopefully helping more people in the future.",
+  address: "Korean Art Gallery, Pyongyang, North Korea"
+)
+file = URI.open('https://i.imgur.com/PE2jmWu.jpg')
+tp_1.user.experience.attach(io: file, filename: 'russian.jpg')
+
+tp_2 = TutorProfile.create!(
   languages: [python, javascript],
   user: tutor_1 = User.create!(email: "andy@email.com", password: 123456, name: "Andy", picture: "https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"),
   bio: "My specializations are Ruby, Python, and JS. I'd love to help. Send me a message!",
   address: "Campeche 233 - CDMX - Mexico"
 )
+file = URI.open('https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60')
+tp_1.user.experience.attach(io: file, filename: 'andy.jpg')
+
 TutorProfile.create!(
   languages: [css, javascript],
   user: User.create!(email: "pedro@email.com", password: 123456, name: "Pedro", picture: "https://images.unsplash.com/photo-1581391528803-54be77ce23e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"),
@@ -105,13 +120,6 @@ TutorProfile.create!(
   address: "Mansudae Peoples Theatre, Pyongyang, North Korea"
 )
 
-TutorProfile.create!(
-  languages: [cplusplus],
-  user: User.create!(email: "therussian@email.com", password: 123456, name: "Ivan Smirnov", picture: "https://i.imgur.com/PE2jmWu.jpg"),
-  bio: "I accidentally entered North Korea when driving from Vladivostok, so now they force me to teach C++",
-  full_bio: "I started teaching myself programming in 2008 at the age of 13, starting with Lua, but have since learnt and worked with C, C#, Java and Python. I primarily make my projects in C# and have participated in 3 Game Jams using XNA. I love creating things especially from scratch which is probably why I love coding, (it is perhaps my biggest hobby) but I also really enjoy helping and teaching people. I've been helping people learn programming whilst at Sixth Form and University and I'd like to think I've gotten pretty good at it, so I look forward to hopefully helping more people in the future.",
-  address: "Korean Art Gallery, Pyongyang, North Korea"
-)
 
 TutorProfile.create!(
   languages: [ruby],

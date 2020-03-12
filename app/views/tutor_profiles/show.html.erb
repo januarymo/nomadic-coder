@@ -1,102 +1,28 @@
 <div class="container">
-  <div class="info">
-    <div class="row">
-      <div class="col-12 col-md-4 text-center">
-        <img src="<%=  @tutor_profile.user.picture%>" style="width: 130px" class="img-fluid rounded-circle shadow-lg" style="width: 180px;">
-      </div>
-      <div class="col-12 col-md-8 d-flex flex-column align-items-center align-items-lg-start">
-        <div class="d-flex flex-row align-items-start mt-3 mt-lg-0">
-          <div class="name">
-            <h1><strong><%= @tutor_profile.user.name %></strong></h1>
-          </div>
-          <a href="#a" class="btn btn-primary btn-pill btn-sm ml-3 mt-1">Follow</a>
-        </div>
+  <div class="row">
+    <!-- Avatar -->
+    <div class="col-12 col-md-4 text-center">
+      <%= image_tag @tutor_profile.user.picture, class: "img-fluid shadow-lg mb-3" %>
 
-        <!-- Skills & Endorsements -->
-
-          <%= @tutor_profile.user.name %>'s <strong>Skills & Endorsements</strong>
-          <div>
-            <% @tutor_profile.tutor_languages.each do |tutor_language| %>
-            <h2>
-             <%= tutor_language.language.name %>
-             <%= link_to endorse_tutor_language_path(tutor_language), class:"endorse", method: :put, remote: true do %>
-              <button type="button" class="btn btn-info" aria-label="Left Align">
-               <span class="glyphicon glyphicon-thumbs-up glyphicon-align-center" aria-hidden="true"></span>
-                <span class="badge" id="tl-<%= tutor_language.id %>"><%= tutor_language.get_likes.size %></span>
-              </button>
-            </h2>
-              <% end %>
-            <% end %>
-          </div>
-          <!-- Bio -->
-        <p><%=  @tutor_profile.full_bio %></p>
-
-      </div>
-    </div>
-  </div>
-
-<!-- Message -->
-  <% if user_signed_in? && current_user.id != @tutor_profile.user_id %>
-      <%= link_to "Message #{@tutor_profile.user.name}", conversations_path(sender_id: current_user.id, recipient_id: @tutor_profile.user.id), method: 'post', class:"button is-link" %>
-    <% elsif user_signed_in? && current_user.id == @tutor_profile.user_id  %>
-      <%= link_to "Conversations", conversations_path %>
-    <% else %>
-
-    <%= link_to "Sign up to message #{@tutor_profile.user.name}", new_user_registration_path %>
-    <% end %>
-    <!--  -->
-
-  <div class="navigation d-flex justify-content-center">
-    <ul class="nav nav-primary nav-tabs mt-3 d-flex flex-column flex-md-row">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#photos">
-          <i class="fas fa-th"></i> Languages
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#saved">
-          <i class="far fa-bookmark"></i> Projects
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#tagged">
-          <i class="far fa-id-badge"></i> Friends
-        </a>
-      </li>
-    </ul>
-  </div>
-<div class="profile-tabs tab-content">
-    <div class="tab-pane fade show active" id="photos">
-        <div class="row">
-          <div class="col-12 col-md-4">
-            <i class="fab fa-python fa-2x"></i>
-            <i class="fab fa-js fa-2x"></i>
-            <i class="fab fa-java fa-2x"></i>
-            <i class="fab fa-swift fa-2x"></i>
-          </div>
-
-        </div>
-
-    <div class="tab-pane fade text-center" id="saved">
-
-      <p class="lead"><span class="text-danger"><i class="far fa-frown-open"></i></span> Nothing saved yet.</p>
-    </div>
-    <div class="tab-pane fade text-center" id="tagged">
-      <p class="lead">Help people tag you.</p>
-      <a href="#a" class="btn btn-info btn-pill">Find Friends</a>
-    </div>
-    <div>
-       <h2> Make it official!</h2>
-      <h1>Schedule a time and place to meet: </h1>
-      <%= simple_form_for [@tutor_profile, @tutoring] do |f| %>
-        <%= f.input :start_at, :as => :datetime, html5: true%>
-         <%= f.input :end_at, :as => :datetime, html5: true%>
-        <%= f.submit "book session", class: "btn btn-primary" %>
+      <!-- Message -->
+      <% if user_signed_in? && current_user != @tutor_profile.user %>
+        <%= link_to "Message Me", conversations_path(sender_id: current_user.id, recipient_id: @tutor_profile.user.id), method: 'post', class: "btn btn-outline-primary"%>
+      <% elsif user_signed_in? && current_user == @tutor_profile.user  %>
+        <%= link_to "Conversations", conversations_path %>
+      <% else %>
+        <%= link_to "Sign up to message #{@tutor_profile.user.name}", new_user_registration_path %>
       <% end %>
-     </div>
+
+    </div>
+
+    <div class="col-12 col-md-8">
+      <div class="name mb-4">
+        <h1 class="mb-0"><strong><%= @tutor_profile.user.name %></strong></h1>
+        <p class="h6 mb-5 mt-5">"<%=  @tutor_profile.bio %>"</p>
+        <%= render "tutor_profiles/endorsements", tutor_profile: @tutor_profile %>
+      </div>
+      <%= render "tutorings/form", tutor_profile: @tutor_profile, tutoring: @tutoring %>
+      <%= render "tutor_profiles/details" %>
+    </div>
   </div>
-
 </div>
-
-<div>
-

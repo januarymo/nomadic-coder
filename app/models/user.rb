@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :sender_conversations, foreign_key: :sender_id, class_name: "Conversation", dependent: :destroy
   has_many :recipient_conversations, foreign_key: :recipient_id, class_name: "Conversation", dependent: :destroy
 
+  has_one_attached :experience
+
   scope :tutor, -> { joins(:tutor_profile) }
   # scope :tutee, -> { left_joins(:tutor_profile).where(tutor_profiles: { user_id: nil }) }
   # Same as above:

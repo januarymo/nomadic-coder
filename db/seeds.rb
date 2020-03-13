@@ -20,6 +20,7 @@ mysql = Language.create!(name: "MySQL")
 
 
 tutee_1 = User.create!(email: "tutee1@email.com", password: 123456, name: "Brandon", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1582828167/m27aQeefTDfF2oztnVWSSEMa.jpg")
+brandon = User.create!(email: "brandy@user.com", password: 123456, name: "Brandon", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1582828167/m27aQeefTDfF2oztnVWSSEMa.jpg")
 
 puts "Creating tutors..."
 tp_1 = TutorProfile.create!(

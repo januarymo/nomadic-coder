@@ -7,18 +7,7 @@
     <div class="col-8">
       <div class="cards">
         <% @tutor_profiles.each do |profile| %>
-          <div class="profile-card">
-            <div class="profile-card-image" style="background-image: url('<%= profile.user.picture %>')"></div>
-            <div class="profile-card-content">
-              <div class="profile-card-title">
-                <h4><%= profile.user.name %></h4>
-              </div>
-              <p><%= profile.bio %></p>
-            </div>
-            <div class="profile-card-actions">
-              <%= link_to 'View my profile & Book me', tutor_profile_path(profile) %>
-            </div>
-          </div>
+          <%= render "tutor_profiles/card", profile: profile %>
         <% end %>
       </div>
     </div>

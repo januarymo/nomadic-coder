@@ -5,8 +5,8 @@
     Suggest a time and place to meet:
   </h4>
   <%= simple_form_for [@tutor_profile, @tutoring] do |f| %>
-    <%= f.input :start_at, :as => :datetime, html5: true%>
-    <%= f.input :end_at, :as => :datetime, html5: true%>
+    <%= f.input :start_at, :as => :datetime %>
+    <%= f.input :end_at, :as => :datetime %>
     <%= f.submit "Book", class: "btn btn-primary btn-block" %>
   <% end %>
 </div>

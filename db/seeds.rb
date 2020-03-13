@@ -38,7 +38,7 @@ tp_2 = TutorProfile.create!(
   bio: "My specializations are Ruby, Python, and JS. I'd love to help. Send me a message!",
   address: "Campeche 233 - CDMX - Mexico"
 )
-file = URI.open('https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60')
+file = URI.open('https://res.cloudinary.com/do7gz03iy/image/upload/v1584106372/experience3_gnexd1.png')
 tp_2.user.experience.attach(io: file, filename: 'andy.jpg')
 
 tp_3 = TutorProfile.create!(

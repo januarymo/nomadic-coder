@@ -24,7 +24,7 @@ brandon = User.create!(email: "brandy@user.com", password: 123456, name: "Brando
 
 puts "Creating tutors..."
 tp_1 = TutorProfile.create!(
-  languages: [cplusplus],
+  languages: [cplusplus, javascript, css],
   user: User.create!(email: "therussian@email.com", password: 123456, name: "Ivan Smirnov", picture: "https://i.imgur.com/PE2jmWu.jpg"),
   bio: "I accidentally entered North Korea when driving from Vladivostok, so now they force me to teach C++",
   full_bio: "I started teaching myself programming in 2008 at the age of 13, starting with Lua, but have since learnt and worked with C, C#, Java and Python. I primarily make my projects in C# and have participated in 3 Game Jams using XNA. I love creating things especially from scratch which is probably why I love coding, (it is perhaps my biggest hobby) but I also really enjoy helping and teaching people. I've been helping people learn programming whilst at Sixth Form and University and I'd like to think I've gotten pretty good at it, so I look forward to hopefully helping more people in the future.",
@@ -83,7 +83,7 @@ tp_6.user.experience.attach(io: file, filename: 'cv3.jpg')
 
 tp_7 = TutorProfile.create!(
   languages: [python, ruby],
-  user: User.create!(email: "kimchi@email.com", password: 123456, name: "Kim Juk", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1584116920/Charles1-2_aeppqr.jpg"),
+  user: User.create!(email: "kimchi@email.com", password: 123456, name: "Kim Juk", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1583523555/kim_tsel9f.jpg"),
   bio: "I believe in the power of Juche and I fight for a United Korea... and I am good at Python and Ruby!",
   full_bio: "• Expert full-stack Python & JavaScript developer
   • Full DevOps: project architecture to production deployment at scale (whether VMs, Docker containers, cloud services, or on-prem)
@@ -98,7 +98,7 @@ tp_7.user.experience.attach(io: file, filename: 'cv3.jpg')
 
 tp_8 = TutorProfile.create!(
   languages: [cplusplus],
-  user: User.create!(email: "kimsangmin@email.com", password: 123456, name: "Kim Sangmin", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1583523555/kim_tsel9f.jpg"),
+  user: User.create!(email: "kimsangmin@email.com", password: 123456, name: "Kim Sangmin", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1584116920/Charles1-2_aeppqr.jpg"),
   bio: "I really like C++ and hope to move back to Busan, South Korea very very soon",
   full_bio: " I've been programming ever since I was a kid, and I love sharing my knowledge with other people. I especially like giving my mentees the full picture of how things work. If you want to know not just WHAT to do, but also how it works, and why it works that way, we'll be a great match.",
   address: "Mansudae Fountain Park, Pyongyang, North Korea"

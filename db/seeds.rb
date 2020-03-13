@@ -38,8 +38,8 @@ tp_2 = TutorProfile.create!(
   bio: "My specializations are Ruby, Python, and JS. I'd love to help. Send me a message!",
   address: "Campeche 233 - CDMX - Mexico"
 )
-file = URI.open('https://res.cloudinary.com/do7gz03iy/image/upload/v1584106372/experience2_bi4eus.png')
-tp_2.user.experience.attach(io: file, filename: 'cv2.jpg')
+file = URI.open('https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60')
+tp_2.user.experience.attach(io: file, filename: 'andy.jpg')
 
 tp_3 = TutorProfile.create!(
   languages: [css, javascript],
@@ -82,7 +82,7 @@ tp_6.user.experience.attach(io: file, filename: 'cv3.jpg')
 
 tp_7 = TutorProfile.create!(
   languages: [python, ruby],
-  user: User.create!(email: "kimchi@email.com", password: 123456, name: "Kim Jong Un", picture: "https://media.voltron.voanews.com/Drupal/01live-166/styles/sourced/s3/reuters-pictures/2020/01/RTS2WX67.jpg?itok=uFwoOi2a"),
+  user: User.create!(email: "kimchi@email.com", password: 123456, name: "Kim Juk", picture: "https://res.cloudinary.com/dg1vldahp/image/upload/v1584116920/Charles1-2_aeppqr.jpg"),
   bio: "I believe in the power of Juche and I fight for a United Korea... and I am good at Python and Ruby!",
   full_bio: "• Expert full-stack Python & JavaScript developer
   • Full DevOps: project architecture to production deployment at scale (whether VMs, Docker containers, cloud services, or on-prem)

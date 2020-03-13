@@ -7,6 +7,7 @@
   <%= simple_form_for [@tutor_profile, @tutoring] do |f| %>
     <%= f.input :start_at, :as => :datetime %>
     <%= f.input :end_at, :as => :datetime %>
+    <%= f.input :location, as: :text, placeholder: 'Suggest a location to meet' %>
     <%= f.submit "Book", class: "btn btn-primary btn-block" %>
   <% end %>
 </div>

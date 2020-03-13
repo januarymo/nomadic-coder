@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="title is-3">Message <%= @conversation.recipient.name %></h1>
+  <h1 class="title is-3">Message <%= link_to @conversation.recipient.name, tutor_profile_path(@conversation.recipient.tutor_profile) %></h1>
 
   <% if @over_ten %>
     <%= link_to "Show previous", '?m=all', class:'button is-link' %>

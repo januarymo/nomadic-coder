@@ -16,7 +16,7 @@ class TutoringsController < ApplicationController
 
     if @tutoring.save
 
-      flash[:notice_alert] = ["Successfully Booked!", "Your tutor will contact you to confirm."]
+      flash[:notice_alert] = ["Successfully Booked!", "Your mentor will contact you to confirm."]
 
       redirect_to tutorings_path
     else

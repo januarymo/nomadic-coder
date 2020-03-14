@@ -24,7 +24,7 @@ brandon = User.create!(email: "brandy@user.com", password: 123456, name: "Brando
 
 puts "Creating tutors..."
 tp_1 = TutorProfile.create!(
-  languages: [cplusplus, javascript, css],
+  languages: [cplusplus, javascript],
   user: User.create!(email: "therussian@email.com", password: 123456, name: "Ivan Smirnov", picture: "https://i.imgur.com/PE2jmWu.jpg"),
   bio: "I accidentally entered North Korea when driving from Vladivostok, so now they force me to teach C++",
   full_bio: "I started teaching myself programming in 2008 at the age of 13, starting with Lua, but have since learnt and worked with C, C#, Java and Python. I primarily make my projects in C# and have participated in 3 Game Jams using XNA. I love creating things especially from scratch which is probably why I love coding, (it is perhaps my biggest hobby) but I also really enjoy helping and teaching people. I've been helping people learn programming whilst at Sixth Form and University and I'd like to think I've gotten pretty good at it, so I look forward to hopefully helping more people in the future.",

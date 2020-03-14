@@ -14,6 +14,6 @@ class Conversation < ApplicationRecord
   end
 
   def last_message
-    messages.last.body
+    messages.last&.body
   end
 end
